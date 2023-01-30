@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.nio.Buffer;
 
 /**
  * @author Andriy Pavlovych
@@ -13,7 +15,18 @@ public class ImageFilter{
 
 	//TODO create proper JavaDoc comments
 	public static int [] getRed(int[] imageData, int width) {
-		//TODO
+		
+		for(int i = 0; i < imageData.length; i++){
+			int r = (imageData[i] & 0x00110000) >> 16;
+			int g = (imageData[i] & 0x00002200) >> 8;
+		}	int b =	(imageData[i] & 0x00000033) >> 0;
+
+		if(null){
+			//modify
+		} else {
+			// dont modify
+		}
+
 		return imageData;
 	}
 
