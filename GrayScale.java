@@ -1,14 +1,15 @@
 // Java program to demonstrate
 // colored to grayscale conversion
+// after the grayscale conversion, it should remove the other 2 respective colors??
 
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-public class testing {
+public class GrayScale {
 	public static void main(String args[])
-		throws IOException
+		throws IOExceptionx
 	{
 		BufferedImage img = null;
 		File f = null;
@@ -16,7 +17,7 @@ public class testing {
 		// read image
 		try {
 			f = new File(
-				"/Users/aali02/desktop/image.png");
+				"/Users/aali02/desktop/IMG_2038.jpeg");
 			img = ImageIO.read(f);
 		}
 		catch (IOException e) {
@@ -54,7 +55,7 @@ public class testing {
 		// write image
 		try {
 			f = new File(
-				"/Users/aali02/desktop/image3.png");
+				"/Users/aali02/desktop/IMG_2039.jpeg");
 			ImageIO.write(img, "png", f);
 		}
 		catch (IOException e) {

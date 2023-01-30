@@ -107,9 +107,9 @@ public class GraphicsApp extends JFrame implements ActionListener{
 	}
 
 	public static void main(String[] args) {
-		String fileName;// = args[0];
-		//fileName = "flower.png";
-		fileName = "tv-pattern.png";
+		String = fileName; //args[0];
+		fileName = "flower.png";
+		//fileName = "tv-pattern.png";
 		GraphicsApp app = new GraphicsApp(fileName);
 		//GraphicsApp app = new GraphicsApp(args[0]);
 
