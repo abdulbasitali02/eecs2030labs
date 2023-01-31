@@ -13,33 +13,58 @@ public class ImageFilter{
 	private ImageFilter() {		
 	}
 
-	//TODO create proper JavaDoc comments
-	public static int [] getRed(int[] imageData, int width) {
-		
-		for(int i = 0; i < imageData.length; i++){
-			int r = (imageData[i] & 0x00110000) >> 16;
-			int g = (imageData[i] & 0x00002200) >> 8;
-		}	int b =	(imageData[i] & 0x00000033) >> 0;
 
-		if(null){
-			//modify
-		} else {
-			// dont modify
-		}
-
-		return imageData;
+/** 
+ * @param imageData provides a 1D array containing color data for each pixel of the image
+ * @param width integer value width
+ * @return int[]
+ */
+public static int [] getRed(int[] imageData, int width) {
+	for (int i = 0; i < imageData.length;i++) {
+		int red = (imageData[i] & 0x00FF0000);
+		int green = (imageData[i] & 0x00FF0000) >> 8;
+		int blue = (imageData[i] & 0x00FF0000) >> 16;
+		int transparent = (imageData[i] & 0xFF000000);
+	
+	imageData[i] = red | green | blue | transparent;
 	}
+	return imageData;
+}
 
-	//TODO create proper JavaDoc comments
-	public static int [] getGreen(int[] imageData, int width) {
-		//TODO
-		return imageData;
-	}
 
-	//TODO create proper JavaDoc comments
-	public static int [] getBlue(int[] imageData, int width) {
-		//TODO
-		return imageData;
+/** 
+ * @param imageData provides a 1D array containing color data for each pixel of the image
+ * @param width integer value width
+ * @return int[]
+ */
+public static int [] getGreen(int[] imageData, int width) {
+	for (int i = 0; i < imageData.length;i++) {
+		int red = (imageData[i] & 0x0000FF00) << 8;
+		int green = (imageData[i] & 0x0000FF00);
+		int blue = (imageData[i] & 0x0000FF00) >> 8;
+		int transparent = (imageData[i] & 0xFF000000);
+	
+	imageData[i] = red | green | blue | transparent;
 	}
+	return imageData;
+}
+
+
+/** 
+ * @param imageData provides a 1D array containing color data for each pixel of the image
+ * @param width integer width value
+ * @return int[]
+ */
+public static int [] getBlue(int[] imageData, int width) {
+	for (int i = 0; i < imageData.length;i++) {
+		int red = (imageData[i] & 0x000000FF) << 16;
+		int green = (imageData[i] & 0x000000FF) << 8;
+		int blue = (imageData[i] & 0x000000FF);
+		int transparent = (imageData[i] & 0xFF000000);
+	
+	imageData[i] = red | green | blue | transparent;
+	}
+	return imageData;
+}
 
 }
