@@ -1,8 +1,17 @@
 import java.util.Date;
 
 public class Apple {
+    public static void main(String[] args) {
+        Apple newApple = new Apple("Golden Delicious", 57.8, new Date());
+        String newApple1 = newApple.toString();
+
+
+
+        System.out.println(newApple1); 
+    }
     private final String type;
     private final double sizeGrams;
+
     private final Date datePicked;
 
     public Apple(String type, double sizeGrams, Date datePicked){
@@ -15,23 +24,19 @@ public class Apple {
         this("Unknown Cultivar", 150.0, new Date());
     }
 
-    public static void main(String[] args) {
-        Apple newApple = new Apple("fiji", 57.8, new Date());
-        String newApple1 = newApple.toString();
-
-       // Date newDate = new Date().get
-
-        System.out.println(newApple1); 
-    }
-
     public String getType(){
         return this.type;
     }
     public double getSizeGrams(){
         return this.sizeGrams;
     }
+    
+    /** 
+     * @return Date
+     * Makes a copy of datePicked object to prevent modification of the original object.
+     */ 
     public Date getDatePicked(){
-        return this.datePicked;
+        return new Date(this.datePicked.getTime());
     }
    
     @Override
@@ -63,7 +68,7 @@ public class Apple {
 
     @Override
     public String toString(){
-        return "Apple Type: " + this.type + " \nWeight(g): " + this.sizeGrams + " \nDate Picked: " + this.datePicked + "Hash Value: " + hashCode();
+        return "Apple Type: " + this.type + " \nWeight(g): " + this.sizeGrams + " \nDate Picked: " + this.datePicked + "\n\bHash Value: " + hashCode();
     }
 
     public void printAppleDetails(){
