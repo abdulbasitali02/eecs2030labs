@@ -22,19 +22,15 @@ public class AppleTest {
         assertNotNull(apple.getDatePicked());
     }
 
+    // fix this test (it works but the result is not what we want)
     @Test
-    public void testAppleImmutable(){
+    public void testAppleImmutability(){
         String type = "MacIntosh";
         double sizeGrams = 250.0;
         Date datePicked = new Date();
         Apple apple = new Apple(type, sizeGrams, datePicked);
-        type = "Fuji";
-        sizeGrams = 300.0;
-        datePicked = new Date();
-        assertEquals("MacIntosh", apple.getType());
-        assertEquals(250.0, apple.getSizeGrams(), 0.0000001);
-        assertNotNull(apple.getDatePicked());
-        
+        datePicked.setTime(0);
+        assertNotEquals(datePicked, apple.getDatePicked());
     }
 
     @Test
@@ -58,6 +54,17 @@ public class AppleTest {
         Apple apple1 = new Apple(type1, sizeGrams1, datePicked1);
         Apple apple2 = new Apple(type2, sizeGrams2, datePicked2);
         assertFalse(apple1.equals(apple2));
+        assertFalse(apple1.equals(null));
+    }
+
+    @Test
+    public void testHashCode(){
+        String type = "MacIntosh";
+        double sizeGrams = 250.0;
+        Date datePicked = new Date();
+        Apple apple1 = new Apple(type, sizeGrams, datePicked);
+        Apple apple2 = new Apple(type, sizeGrams, datePicked);
+        assertTrue(apple1.hashCode() == apple2.hashCode());
     }
 
 }
