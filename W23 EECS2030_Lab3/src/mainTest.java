@@ -5,6 +5,6 @@ public class mainTest {
 
     
 
-  //  Apple newApple = new Apple("fiji", 57.8, date);
+  //  Apple newApple = new Apple("fiji", 57.8, new Date(0));
     
 }

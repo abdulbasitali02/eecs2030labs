@@ -8,7 +8,7 @@ public class Apple {
     public Apple(String type, double sizeGrams, Date datePicked){
         this.type = type;
         this.sizeGrams = sizeGrams;
-        this.datePicked = new Date(datePicked.getTime());
+        this.datePicked = datePicked;
     }
 
     public Apple(){
@@ -17,9 +17,11 @@ public class Apple {
 
     public static void main(String[] args) {
         Apple newApple = new Apple("fiji", 57.8, new Date());
-        newApple.printAppleDetails();
+        String newApple1 = newApple.toString();
 
-        System.out.println(newApple.hashCode()); 
+       // Date newDate = new Date().get
+
+        System.out.println(newApple1); 
     }
 
     public String getType(){
@@ -29,7 +31,7 @@ public class Apple {
         return this.sizeGrams;
     }
     public Date getDatePicked(){
-        return new Date(this.datePicked.getTime());
+        return this.datePicked;
     }
    
     @Override
@@ -52,15 +54,16 @@ public class Apple {
     @Override
     public int hashCode(){
         int result = 17;
-        result = 31 * result + this.type.hashCode();
-        result = 31 * result + (int) this.sizeGrams;
-        result = 31 * result + this.datePicked.hashCode();
+        int prime = 31;
+        result = prime * result + this.type.hashCode();
+        result = prime * result + (int) this.sizeGrams;
+        result = prime * result + this.datePicked.hashCode();
         return result;
     }
 
     @Override
     public String toString(){
-        return "Apple Type: " + this.type + " \nWeight(g): " + this.sizeGrams + " \nDate Picked: " + this.datePicked;
+        return "Apple Type: " + this.type + " \nWeight(g): " + this.sizeGrams + " \nDate Picked: " + this.datePicked + "Hash Value: " + hashCode();
     }
 
     public void printAppleDetails(){

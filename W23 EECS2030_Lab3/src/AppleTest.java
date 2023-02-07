@@ -24,6 +24,16 @@ public class AppleTest {
 
     @Test
     public void testAppleImmutable(){
+        String type = "MacIntosh";
+        double sizeGrams = 250.0;
+        Date datePicked = new Date();
+        Apple apple = new Apple(type, sizeGrams, datePicked);
+        type = "Fuji";
+        sizeGrams = 300.0;
+        datePicked = new Date();
+        assertEquals("MacIntosh", apple.getType());
+        assertEquals(250.0, apple.getSizeGrams(), 0.0000001);
+        assertNotNull(apple.getDatePicked());
         
     }
 
