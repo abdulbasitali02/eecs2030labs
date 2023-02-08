@@ -21,7 +21,6 @@ public class Apple {
         this("Unknown Cultivar", 150.0, new Date());
     }
 
-    
     /** 
      * @return String
      * returns the type of the apple.
@@ -30,7 +29,6 @@ public class Apple {
         return this.type;
     }
 
-    
     /** 
      * @return double
      * returns the size of the apple in grams.
@@ -88,7 +86,7 @@ public class Apple {
 
     @Override
     public String toString(){
-        return "Apple Type: " + this.type + " \nWeight(g): " + this.sizeGrams + " \nDate Picked: " + this.datePicked + "\n\bHash Value: " + hashCode();
+        return "Apple Type: " + this.type + " \nWeight(g): " + this.sizeGrams + " \nDate Picked: " + this.datePicked + "\nHash Value: " + hashCode();
     }
 
 } 

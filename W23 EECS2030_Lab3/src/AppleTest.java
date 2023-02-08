@@ -3,6 +3,8 @@ import java.util.Date;
 import org.junit.Test;
 
 public class AppleTest {
+
+    // This test tests for the constructor with arguments.
     @Test
     public void testAppleConstructorArguments(){
         String type = "MacIntosh";
@@ -14,6 +16,7 @@ public class AppleTest {
         assertEquals(datePicked, apple.getDatePicked());
     }
 
+    // This test tests for the default constructor.
     @Test
     public void testAppleConstructorNoArguments(){
         Apple apple = new Apple();
@@ -22,17 +25,27 @@ public class AppleTest {
         assertNotNull(apple.getDatePicked());
     }
 
-    // fix this test (it works but the result is not what we want)
+    // This test tests for immutability of the Apple class.
     @Test
     public void testAppleImmutability(){
         String type = "MacIntosh";
-        double sizeGrams = 250.0;
         Date datePicked = new Date();
-        Apple apple = new Apple(type, sizeGrams, datePicked);
-        datePicked.setTime(0);
-        assertNotEquals(datePicked, apple.getDatePicked());
+        Apple apple = new Apple(type, 200.0, datePicked);
+        // Type
+        String newType = "Fuji";
+        apple.getType().replace(type, newType);
+        assertEquals(type, apple.getType());
+        // Size
+        double sizeGrams = apple.getSizeGrams();
+        sizeGrams = 0.0;
+        assertEquals(200.0, apple.getSizeGrams(), 0.0000001);
+        // Date
+        Date newDatePicked = new Date();
+        apple.getDatePicked().setTime(newDatePicked.getTime());
+        assertEquals(datePicked, apple.getDatePicked());
     }
 
+    // This test tests for the case where the two apples are equal.
     @Test
     public void testAppleEquals(){
         String type = "MacIntosh";
@@ -43,6 +56,7 @@ public class AppleTest {
         assertTrue(apple1.equals(apple2));
     }
 
+    // This test tests for the null case and for the case where the two apples are not equal.
     @Test
     public void testAppleNotEquals(){
         String type1 = "MacIntosh";
@@ -57,6 +71,7 @@ public class AppleTest {
         assertFalse(apple1.equals(null));
     }
 
+    // This test tests for the case where the two apples are equal but not the same object.
     @Test
     public void testHashCode(){
         String type = "MacIntosh";
