@@ -68,9 +68,9 @@ public class Apple implements Comparable<Apple> {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((type == null) ? 0 : type.hashCode());
         long temp;
-        temp = Double.doubleToLongBits(sizeGrams);
+        temp = Double.doubleToLongBits(Math.round(this.sizeGrams / 5.0) * 5.0);
+        result = prime * result + ((type == null) ? 0 : type.hashCode());
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + ((datePicked == null) ? 0 : datePicked.hashCode());
         return result;
