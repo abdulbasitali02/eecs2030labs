@@ -82,6 +82,23 @@ public class AppleTest {
         assertTrue(apple1.hashCode() == apple2.hashCode());
     }
 
+   // This test compares two apple objects. 
+    @Test
+    public void testCompareTo() {
+        String type1 = "MacIntosh";
+        String type2 = "Golden delicious";
+        double sizeGrams1 = 250.0;
+        double sizeGrams2 = 300.0;
+        Date datePicked1 = new Date();
+        Date datePicked2 = new Date();
+        Apple apple1 = new Apple(type1, sizeGrams1, datePicked1);
+        Apple apple2 = new Apple(type2, sizeGrams2, datePicked2);
+        assertTrue(apple1.compareTo(apple2) < 0);
+        assertTrue(apple2.compareTo(apple1) > 0);
+        assertTrue(apple1.compareTo(apple1) == 0);
+
+    }
+
 }
 
 
