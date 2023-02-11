@@ -91,6 +91,7 @@ public class AppleTest {
         double sizeGrams2 = 300.0;
         Date datePicked1 = new Date();
         Date datePicked2 = new Date();
+        
         Apple apple1 = new Apple(type1, sizeGrams1, datePicked1);
         Apple apple2 = new Apple(type2, sizeGrams2, datePicked2);
         assertTrue(apple1.compareTo(apple2) < 0);

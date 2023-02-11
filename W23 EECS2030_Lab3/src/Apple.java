@@ -11,8 +11,17 @@ public class Apple implements Comparable<Apple> {
         this.datePicked = datePicked;
     }
 
+    public static void main(String[] args) {
+        Apple a1 = new Apple("MacIntosh", 250.0, new Date());
+        Apple a2 = new Apple("Fiji", 300.0, new Date());
+        int returnValue =  a1.compareTo(a2);
+        System.out.println(returnValue);
+    }
+
     public Apple(){
-        this("Unknown Cultivar", 150.0, new Date());
+        this.type = "Unknown Cultivar";
+        this.sizeGrams = 150.0;
+        this.datePicked = new Date();
     }
 
     /** 
@@ -81,6 +90,15 @@ public class Apple implements Comparable<Apple> {
         return "Apple Type: " + this.type + " \nWeight(g): " + this.sizeGrams + " \nDate Picked: " + this.datePicked + "\nHash Value: " + hashCode();
     }
 
+    
+    /** 
+     * @param a
+     * @return int 
+     * returns 1 if the size of the apple is greater than the size of the apple passed in as a parameter.
+     * returns -1 if the size of the apple is less than the size of the apple passed in as a parameter.
+     * returns 0 if the size of the apple is equal to the size of the apple passed in as a parameter.
+     */
+    
     @Override
     public int compareTo(Apple a) {
         if (Math.round(this.sizeGrams / 5.0) * 5.0 > Math.round(a.sizeGrams / 5.0) * 5.0) {
