@@ -94,11 +94,11 @@ public class AppleTest {
         
         Apple apple1 = new Apple(type1, sizeGrams1, datePicked1);
         Apple apple2 = new Apple(type2, sizeGrams2, datePicked2);
-        assertTrue(apple1.compareTo(apple2) < 0);
-        assertTrue(apple2.compareTo(apple1) > 0);
+        assertTrue(apple1.compareTo(apple2) < 1);
+        assertTrue(apple2.compareTo(apple1) > -1);
         assertTrue(apple1.compareTo(apple1) == 0);
 
-    }
+    } 
 
 }
 
