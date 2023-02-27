@@ -20,7 +20,7 @@ public class Lists {
 		insertionSortRecursive(list.subList(1, list.size()));
 		T first = list.get(0);
 		T second = list.get(1);
-		if (first.compareTo(second) > 0){
+		if (second.compareTo(first) < 0){
 			list.set(0, second);
 			list.set(1, first);
 			insertionSortRecursive(list.subList(1, list.size()));
