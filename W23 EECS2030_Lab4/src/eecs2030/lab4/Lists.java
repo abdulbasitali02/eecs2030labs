@@ -12,12 +12,37 @@ public class Lists {
 	}
 
 	public static <T extends Comparable <? super T>> void insertionSortRecursive(List <T> list){
-		//TODO implement the recursive solution
-		//your solution may not use loops of any kind, neither directly, nor indirectly (e.g., in some helper method)
+		//base case
+		if (list.size() <= 1){
+			return;
+		}
+		
+		//Sort the first n-1 elements
+		insertionSortRecursive(list.subList(0, list.size()-1));
+
+		//Insert the nth element into the sorted list
+		T item = list.get(list.size()-1);
+		int j = list.size() - 2;
+		while (j >= 0 && list.get(j).compareTo(item) > 0){
+			list.set(j+1, list.get(j));
+			j--;
+		}
+		list.set(j+1, item);
 	}
 	
 	public static <T extends Comparable <? super T>> void insertionSortIterative(List <T> list){
-		//TODO implement the Iterative solution
+		int i = 1;
+		
+		while (i < list.size()){
+			T item = list.get(i);
+			int j = i - 1;
+			while (j >= 0 && list.get(j).compareTo(item) > 0){
+				list.set(j+1, list.get(j));
+				j--;
+			}
+			list.set(j+1, item);
+			i++;
+		}
 	}
 
 }
