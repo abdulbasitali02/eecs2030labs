@@ -12,23 +12,19 @@ public class Lists {
 	}
 
 	public static <T extends Comparable <? super T>> void insertionSortRecursive(List <T> list){
-
-		//base case
-		if (list.size() <= 1){
+		if (list.size() < 2){
 			return;
 		}
 		insertionSortRecursive(list.subList(1, list.size()));
 		T first = list.get(0);
 		T second = list.get(1);
-		if (second.compareTo(first) < 0){
+		if (second.compareTo(first) > 0){
 			list.set(0, second);
 			list.set(1, first);
-			insertionSortRecursive(list.subList(1, list.size()));
-		}
-		
-	}
-	
-	
+			insertionSortRecursive(list.subList(0, list.size()-1));
+		}		
+	}	
+
 
 	public static <T extends Comparable <? super T>> void insertionSortIterative(List <T> list){
 		int i = 1;
