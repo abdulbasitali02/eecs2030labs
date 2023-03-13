@@ -7,7 +7,7 @@ public class PeopleClassesTester {
 		Person person1 = new Person ("Person One", new Date()); //dob = current date and time; 
 		System.out.println ("(Testing getDob()) " + person1.getDob());
 		System.out.println (person1);
-		
+	
 		Student student1 = new Student ("Student One", new Date(), "123456"); 
 		System.out.println (student1);
 		
@@ -35,3 +35,4 @@ public class PeopleClassesTester {
 		System.out.println (list);
 	}
 }
+
