@@ -12,7 +12,7 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + " " + this.employeeNumber;
+        return "Employee\n" + super.toString() + "Employee Number: " + this.employeeNumber;
     }
 
     

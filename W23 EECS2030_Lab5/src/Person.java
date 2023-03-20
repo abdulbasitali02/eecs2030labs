@@ -11,7 +11,7 @@ public class Person {
 
     @Override
     public String toString(){
-        return "name: " + this.name + "\nDOB: " + this.dob.toString() + "\n";
+        return "Name: " + this.name + "\nDOB: " + this.dob.toString() + "\n";
     }
 
     public String getDob() {

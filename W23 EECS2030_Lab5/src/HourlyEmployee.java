@@ -18,6 +18,6 @@ public class HourlyEmployee extends Employee {
     
     @Override
     public String toString() {
-        return super.toString() + " " + this.hourlyRate + " " ;
+        return super.toString() + "\nHourly Rate: " + this.hourlyRate + "\n " ;
     }
 }
