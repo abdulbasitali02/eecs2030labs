@@ -17,6 +17,6 @@ public class GraduateStudent extends Student{
 
     @Override
     public String toString() {
-        return super.toString() + " " + this.Supervisor;
+        return "Graduate " + super.toString() + "Thesis Supervisor: " + this.Supervisor + "\n";
     }
 }

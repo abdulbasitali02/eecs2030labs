@@ -11,10 +11,10 @@ public class Person {
 
     @Override
     public String toString(){
-        return this.name + " " + this.dob.toString();
+        return "name: " + this.name + "\nDOB: " + this.dob.toString() + "\n";
     }
 
     public String getDob() {
-        return this.dob.toString();
+        return "\n" + this.dob.toString();
     }
 }

@@ -4,9 +4,8 @@ public class HourlyEmployee extends Employee {
 
     private double hourlyRate;
 
-    public HourlyEmployee(String name, Date date, String employeeNumber, double hourlyRate) {
+    public HourlyEmployee(String name, Date date, String employeeNumber) {
         super(name, date, employeeNumber);
-        this.hourlyRate = hourlyRate;
     }
 
     public double getHourlyRate() {
@@ -16,7 +15,7 @@ public class HourlyEmployee extends Employee {
     public void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
-
+    
     @Override
     public String toString() {
         return super.toString() + " " + this.hourlyRate + " " ;
