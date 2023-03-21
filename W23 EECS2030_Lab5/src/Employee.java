@@ -15,6 +15,4 @@ public class Employee extends Person {
         return "Employee\n" + super.toString() + "Employee Number: " + this.employeeNumber;
     }
 
-    
-
 }
