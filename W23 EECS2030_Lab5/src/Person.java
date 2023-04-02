@@ -4,9 +4,9 @@ public class Person {
     private final String name;
     private final Date dob;
 
-    public Person(String name, Date date) {
+    public Person(String name, Date dob) {
         this.name = name;
-        this.dob = date;
+        this.dob = (Date) dob.clone();
     }
 
     @Override
